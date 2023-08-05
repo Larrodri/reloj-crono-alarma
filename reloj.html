@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reloj y Fecha</title>
+    <link rel="stylesheet" href="estilo.css">       
+</head>
+<body>
+    <div class="tabs">
+		<header>
+			<a href="#relojdigital"  class="activo"><img src="iconos/reloj-inteligente.png"> Reloj Digital y Fecha</a>
+			<a href="#relojanalogico"><img src="iconos/reloj-de-pulsera.png"> Reloj Analógico</a>
+			<a href="#cronometro"><img src="iconos/cronometro.png"> Cronómetro</a>
+			<a href="#alarma"><img src="iconos/despertador.png"> Alarma</a>
+		</header>
+		<div id="relojdigital" class="activo">
+			<div id="colapsado">
+                <div class="fechahora">
+                    <span id="hora" class="texto"></span><span class="texto">:</span><span id="minutos" class="texto" ></span><span class="texto">:</span><span id="segundos" class="texto"></span><br>
+                <hr>  
+                    <span class="texto" id="fecha"></span>
+                </div>
+            </div>
+		</div>
+        <div id="relojanalogico">
+			<div id="reloj">
+                <div class="numCont"><span class="numero">1</span></div>
+                <div class="numCont"><span class="numero">2</span></div>
+                <div class="numCont"><span class="numero">3</span></div>
+                <div class="numCont"><span class="numero">4</span></div>
+                <div class="numCont"><span class="numero">5</span></div>
+                <div class="numCont"><span class="numero">6</span></div>
+                <div class="numCont"><span class="numero">7</span></div>
+                <div class="numCont"><span class="numero">8</span></div>
+                <div class="numCont"><span class="numero">9</span></div>
+                <div class="numCont"><span class="numero">10</span></div>
+                <div class="numCont"><span class="numero">11</span></div>
+                <div class="numCont"><span class="numero">12</span></div>
+                <div id="mHoras"></div>
+                <div id="mMinutos"></div>
+                <div id="mSegundos"></div>
+                <div id="centro"></div>
+            </div>
+		</div>
+		<div id="cronometro">
+            <div id="colapsado">
+                <div class="fechahora">
+                    <span id="cronohora" class="texto"></span><span class="texto">:</span><span id="cronomin" class="texto" ></span><span class="texto">:</span><span id="cronoseg" class="texto"></span><br>
+                <hr>  
+                <button onclick="iniciar()">Iniciar</button><button onclick="parar()">Parar</button><button onclick="reiniciar()">Reiniciar</button>
+                </div>
+            </div>
+		</div>
+		<div id="alarma">
+			<div>
+                <div id="colapsado">
+                    <div class="fechahora">
+                        <span id="horaal" class="texto"></span><span class="texto">:</span><span id="minutosal" class="texto" ></span><span class="texto">:</span><span id="segundosal" class="texto"></span><br>
+                        <hr>  
+                        <span class="texto" id="ah"></span><span class="texto">:</span><span class="texto" id="am"></span>
+                        <hr>  
+                        <button onclick="toggleCrear()">Crear</button><button onclick="cambiar()">Cambiar</button>
+                    </div>
+                </div>
+                <div class="popupsonido">
+                    <div class="contenido-ventana">
+                        <video id="musica" src="sonido\TeGusto-ElTaiger.mp4" width= "375" height= "245" align-items= "center" controls></video><br>
+                        <button onclick="pararalarma()" class="cerraralarma " href="#popupsonido">Parar</button>
+                    </div>
+                </div>
+                <div class="popup popupoalarma">
+                    <div class="contenido-ventana">
+                        <span id="textoalarma">Crear alarma</span>
+                        <span class="cerrar cerrarpopup" href="#popup">&times;</span><br>
+                        <label for="horaAlarma" class="alarma">Hora</label><input focus type="number" max="23" id="alarmah" >
+                        <label for="minutosAlarma" class="alarma">Minutos</label><input type="number" max="59" id="alarmam">
+                        <label for="Titulo" class="alarma">Titulo</label><input type="text" value="Alarma"><br><br>
+                        <button onclick="guardar()" class="cerrarpopup " href="#popup">Guardar</button>
+                    </div>
+                </div>
+            </div>
+		</div>
+	</div>
+    <script src="funciones.js"></script>
+</body>
+</html>

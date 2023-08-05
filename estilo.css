@@ -1,0 +1,232 @@
+@font-face {
+    font-family: 'DIGITALDREAMFAT';
+    src: url("DIGITALDREAMFAT.ttf");
+}
+
+#colapsado {
+    border-collapse: collapse;
+    margin-top: 30px;
+    margin-left: 220px;
+}
+.colapsado1 {
+    border-collapse: collapse;
+    margin-top: 30px;
+    margin-left: 300px;
+}
+
+.texto{
+    font-size: 100px;
+    font-family: DIGITALDREAMFAT;
+    white-space: nowrap;
+}
+
+body {
+    margin: 0; font-size: 16px; font-family: sans-serif;
+    
+}
+.tabs {
+    width: 80%; margin: 80px auto;
+    
+}
+.tabs header {
+    border-bottom: 1px solid #CCC;
+    display: flex;
+}
+.tabs header a {
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #CCC;
+    margin-bottom: -1px;
+    background-color: #EEE;
+}
+.tabs header a.activo {
+    border-bottom-color: white;
+    background-color: #FFF;
+}
+.tabs > div {
+    
+    padding: 20px;
+    border: 1px solid #CCC;
+    border-top: none;
+    display: none;
+   /* background-color: rgb(233, 231, 231);*/
+}
+.tabs > div.activo {
+    display: block;
+}
+button{
+    display: inline-block;
+    width: 250px;
+    height: 60px;
+    margin-left: 20px;
+    background: #f7d9d9;
+    box-shadow: 0px 1px 0px rgba(185, 184, 184, 0.514) inset,
+    0 1px 3px rgba(0,0,0,.2);
+    border: 1px solid #ffbbbb;
+    border-radius: 10px;
+    text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+    font: bold 25px Helvetica, Sans-Serif;
+    text-align: center;
+    line-height: 60px;
+    color: #1d1d1d;
+    cursor: pointer;
+
+}
+button:hover{
+    box-shadow:  3px 3px 3px 3px rgba(0,0,0,.2);
+}
+.popup {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+
+}
+.popupsonido{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.contenido-ventana {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1.5rem;
+    width: 50rem;
+    height: 350px;
+    border-radius: 0.5rem;
+    text-align: justify;
+}
+.cerrar{
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: lightgray;
+}
+.cerrar:hover{
+    color: #F00;
+}
+
+.mostrar-ventana{
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+label {
+    display: block; /* Ahora los inputs quedan debajo de los label */
+    padding: 5px; /* Separando espacios internos */
+}
+input{
+    height: 30px;
+}
+#textoalarma{
+    font-size: 50px;
+    font-family: Helvetica, Sans-Serif;
+}
+.alarma{
+    font-size: 20px;
+    font-family: Helvetica, Sans-Serif;
+}
+img{
+    height: 35px;
+    width: 30px;
+}
+
+/*************************    RELOJ DIGITAL     ****************************/
+.fechahora{
+    text-align: center;
+    padding: 1%;
+    margin-left: 50px;
+    border: 2px solid #333;
+    background-color: rgb(238, 186, 169);
+    border-radius: 10px;
+    width: 65%;
+}
+hr{
+    border: 2px solid #333;
+}
+/*************************    REELOJ ANALÓGICO  ****************************/
+#reloj {
+    margin-left: 600px;
+    width: 30vh; height: 30vh;
+    border-radius: 9999px;
+    border: 8px solid #333;
+    background-color: rgb(238, 186, 169);
+    position: relative;
+}
+#centro{
+    width: 15px; height: 15px;
+    top: 47%;
+    left: 47%;
+    position: absolute;
+    border-radius: 9999px;
+    background-color: black;
+}
+#mHoras {
+    position: absolute;
+    width: 30%; height: 2%;
+    border: 1px solid black;
+    background-color: rgb(167, 164, 164);
+    top: 49%; 
+    left: 50%;
+    transform-origin: left center;
+    transform: rotate(5deg);
+}
+#mMinutos {
+    position: absolute;
+    width: 40%; height: 2%;
+    border: 1px solid blue;
+    background-color: rgb(159, 159, 247);
+    top: 49%; 
+    left: 50%;
+    transform-origin: left center;
+    transform: rotate(15deg);
+}
+#mSegundos {
+    position: absolute;
+    width: 45%; height: 1%;
+    border: 1px solid red;
+    background-color: rgb(172, 119, 119);
+    top: 49%; 
+    left: 50%;
+    transform-origin: left center;
+    transform: rotate(35deg);
+}
+.numCont {
+    position: absolute;
+    top: calc(50% - 20px);
+    left: 50%;
+    width: 48%; height: 40px;
+    display: flex;
+    align-items: center; justify-content: flex-end;
+    transform-origin: left center;
+    font-size: 40px;
+    font-family: sans-serif;
+    line-height: 40px;
+}
+.numCont > span {
+    display: flex;
+    width: 40px; height: 40px;
+    justify-content: center; align-items: center;
+}
